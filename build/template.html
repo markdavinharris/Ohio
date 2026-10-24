@@ -1,4 +1,4 @@
-<title>Ohio Early Vote 2026</title>
+<title>__TITLE__</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
@@ -53,6 +53,9 @@ a{color:inherit}
 .scope{display:flex;flex-direction:column;gap:6px;min-width:0}
 .scope label{font-family:var(--cond);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--head-fg2)}
 .scope select{font:inherit;font-weight:600;font-size:16px;color:var(--navy);background:#fff;border:0;border-radius:var(--radius);padding:9px 36px 9px 12px;min-width:260px;max-width:100%;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23013047' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.mastseg{border-color:rgba(255,255,255,.3)}
+.mastseg button{background:rgba(255,255,255,.08);color:#fff}
+.mastseg button[aria-pressed="true"]{background:#fff;color:var(--navy)}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;letter-spacing:.02em}
 
@@ -145,6 +148,22 @@ section h2 small{font-family:var(--font);font-weight:500;font-size:14px;color:va
 :root[data-theme="dark"] .mapinfo .open{background:var(--blue);color:var(--navy2)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mapinfo .open{background:var(--blue);color:var(--navy2)}}
 
+
+/* Heat table */
+.heatwrap{border:0;background:none}
+table.heat{min-width:640px;border-collapse:separate;border-spacing:3px}
+table.heat th,table.heat td{border:0;white-space:normal}
+table.heat thead th{position:static;background:none;cursor:default;text-align:center;padding:4px 6px}
+table.heat thead th:first-child{text-align:left}
+table.heat tbody th{text-align:left;font-weight:700;color:var(--fg);padding:6px 10px;white-space:nowrap}
+table.heat tbody th small{display:block;font-weight:500;color:var(--muted);font-size:11px}
+table.heat td{border-radius:4px;padding:8px 10px;text-align:center;vertical-align:middle;min-width:92px}
+table.heat td .v{font-family:var(--cond);font-weight:700;font-size:22px;line-height:1;display:block}
+table.heat td .c{display:block;font-size:11.5px;color:var(--fg2);margin-top:3px}
+table.heat td .d{display:inline-block;margin-top:4px;font-size:11.5px;font-weight:700;padding:1px 6px;border-radius:999px;background:var(--bg);color:var(--fg)}
+table.heat tr.tot td,table.heat td.tot{outline:1px solid var(--line)}
+table.heat td.dark .c{color:inherit}
+
 /* Tables */
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 table{border-collapse:collapse;width:100%;font-size:13px;min-width:720px}
@@ -183,13 +202,15 @@ footer.meth .cs svg{height:22px;width:auto}
         </svg>
         <span class="eyebrow">Early Vote Tracker</span>
       </div>
-      <h1 id="title">Ohio Early Vote 2026</h1>
+      <h1 id="title">__TITLE__</h1>
       <div class="sub" id="subtitle"></div>
       <div class="chips" id="chips" style="margin-top:10px"></div>
     </div>
     <div class="scope">
       <label for="scope">View</label>
       <select id="scope"></select>
+      <label for="cmp24" style="margin-top:8px">Compare against</label>
+      <div class="seg mastseg" id="cmp24" role="group" aria-label="Comparison years"></div>
     </div>
   </div>
 </header>
@@ -200,26 +221,152 @@ footer.meth .cs svg{height:22px;width:auto}
   </section>
 
   <section id="s-pace">
-    <header><div><div class="rule"></div><h2>Pacing against 2024 and 2022 <small>cumulative, by days before Election Day</small></h2></div>
+    <header><div><div class="rule"></div><h2 id="pace-h2">Pacing against 2024 and 2022 <small>cumulative, by days before Election Day</small></h2></div>
       <div class="toggles">
         <div class="seg" id="pace-metric" role="group" aria-label="Measure"></div>
         <div class="seg" id="pace-party" role="group" aria-label="Party"></div>
       </div>
     </header>
     <div class="grid2">
-      <div class="panel"><div class="ptitle"><h3 id="pace-title">Cumulative early votes</h3><span class="sub">Hover for the three-year comparison</span></div><div class="chart" id="pace-chart"></div><div class="legend" id="pace-legend"></div></div>
+      <div class="panel"><div class="ptitle"><h3 id="pace-title">Cumulative early votes</h3><span class="sub">Hover for the year-by-year comparison</span></div><div class="chart" id="pace-chart"></div><div class="legend" id="pace-legend"></div></div>
       <div class="panel"><div class="ptitle"><h3 id="daily-title">Each day in 2026</h3><span class="sub">Mail returned and in-person, by party</span></div><div class="chart" id="daily-chart"></div><div class="legend" id="daily-legend"></div></div>
     </div>
   </section>
 
   <section id="s-party">
-    <header><div><div class="rule"></div><h2>Partisan split <small>registered party from the Ohio voter file</small></h2></div></header>
+    <header><div><div class="rule"></div><h2>Partisan split <small>__PARTY_LABEL__ from the __STATE__ voter file</small></h2></div></header>
     <div class="grid2">
-      <div class="panel"><div class="ptitle"><h3>Who has voted so far</h3><span class="sub">Share of early votes cast (mail returned + in person)</span></div><div class="shares" id="shares"></div><div class="hint">“Same point” = the same number of days before Election Day as the latest 2026 data. Other / unaffiliated includes voters with no party on file.</div></div>
+      <div class="panel"><div class="ptitle"><h3>Who has voted so far</h3><span class="sub">Share of early votes cast (mail returned + in person)</span></div><div class="shares" id="shares"></div><div class="hint">“Same point” = the same number of days before Election Day as the latest 2026 data. __OTHER_NOTE__</div></div>
       <div class="panel"><div class="ptitle"><h3>Republican minus Democratic share</h3><span class="sub">Net points, cumulative early votes</span></div><div class="chart" id="net-chart"></div><div class="legend" id="net-legend"></div></div>
       <div class="panel"><div class="ptitle"><h3>Daily party mix, 2026</h3><span class="sub">Share of each day’s early votes</span></div><div class="chart" id="mix-chart"></div><div class="legend" id="mix-legend"></div></div>
       <div class="panel"><div class="ptitle"><h3>Turnout within each party</h3><span class="sub">Early votes as a share of registered voters, 2026</span></div><div class="chart" id="turnout-chart"></div><div class="hint" id="turnout-hint"></div></div>
     </div>
+  </section>
+
+<style>
+/* Projection panel: gated behind an acknowledgment; dot plot of early vs projected share per modeled-party group */
+#s-proj [hidden]{display:none!important}
+#s-proj .gate{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--radius);padding:18px 20px;display:grid;gap:12px;max-width:760px}
+#s-proj .gate h3{font-family:var(--cond);font-weight:700;font-size:20px}
+#s-proj .gate p{margin:0;color:var(--fg2);font-size:14px;max-width:68ch}
+#s-proj .ack{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:14px;cursor:pointer}
+#s-proj .ack input{width:18px;height:18px;margin-top:1px;flex:0 0 auto;accent-color:var(--navy)}
+#s-proj .btn{justify-self:start;padding:8px 14px;border-radius:var(--radius);background:var(--navy);color:#fff;font-weight:700;font-size:14px}
+#s-proj .btn:disabled{opacity:.4;cursor:not-allowed}
+:root[data-theme="dark"] #s-proj .btn{background:var(--blue);color:var(--navy2)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) #s-proj .btn{background:var(--blue);color:var(--navy2)}}
+#s-proj .linkbtn{color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:3px}
+#s-proj .warnchip{display:inline-block;background:var(--gold);color:var(--navy);font-family:var(--cond);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:11px;padding:2px 8px;border-radius:999px}
+#s-proj .gaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:14px}
+#s-proj .gaps>div{background:var(--surface);padding:12px 16px;display:grid;gap:4px;min-width:0}
+#s-proj .gaps .l{font-family:var(--cond);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:var(--muted)}
+#s-proj .gaps .v{font-family:var(--cond);font-weight:700;font-size:32px;line-height:1}
+#s-proj .gaps .d{font-size:13px;color:var(--fg2)}
+#s-proj .dots{display:grid;gap:10px}
+#s-proj .drow{display:grid;grid-template-columns:120px minmax(0,1fr) 128px;gap:12px;align-items:center;font-size:13px}
+#s-proj .drow .lab{font-weight:700}
+#s-proj .drow .vals{text-align:right;color:var(--fg2)}
+#s-proj .drow .vals b{color:var(--fg)}
+#s-proj .track{position:relative;height:26px;border-radius:3px;background:linear-gradient(90deg,var(--line2) 1px,transparent 1px) 0 0/25% 100%,var(--bg)}
+#s-proj .range{position:absolute;top:9px;height:8px;border-radius:4px;opacity:.35}
+#s-proj .mk{position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;border:2px solid currentColor}
+#s-proj .mk.early{background:var(--bg)}
+#s-proj .mk.proj{background:currentColor}
+#s-proj .axisrow{display:grid;grid-template-columns:120px minmax(0,1fr) 128px;gap:12px;font-size:11px;color:var(--muted)}
+#s-proj .axisrow .ticks{position:relative;height:14px}
+#s-proj .axisrow .ticks span{position:absolute;transform:translateX(-50%)}
+#s-proj .axisrow .ticks span:first-child{transform:none}
+#s-proj .axisrow .ticks span:last-child{transform:translateX(-100%)}
+#s-proj ul.meth{margin:0;padding-left:18px;display:grid;gap:6px;color:var(--fg2);font-size:13.5px;max-width:76ch}
+#s-proj .scopenote{background:var(--surface2);border-radius:var(--radius);padding:8px 12px;font-size:13px;color:var(--fg2);margin-bottom:12px}
+@media (max-width:560px){#s-proj .drow,#s-proj .axisrow{grid-template-columns:76px minmax(0,1fr)}#s-proj .drow .vals{grid-column:2;text-align:left}#s-proj .axisrow>span:last-child{display:none}}
+</style>
+<section id="s-proj">
+  <header><div><div class="rule"></div><h2>Projected final electorate <small>early vote plus who is likely still to vote</small></h2></div><span class="warnchip">Experimental</span></header>
+  <div class="gate" id="proj-gate">
+    <h3>Projections are hidden</h3>
+    <p>This panel estimates what the full __STATE__ electorate will look like once Election Day votes are in, using the early vote so far and each voter's past behavior. Projections built from early vote data have missed by several points in past cycles. Read them as a range, not a forecast.</p>
+    <label class="ack" for="proj-ack"><input type="checkbox" id="proj-ack"> I acknowledge modeling off of EV is insane but I want to look anyways</label>
+    <button class="btn" id="proj-show" type="button" disabled>Show projections</button>
+  </div>
+  <div id="proj-body" hidden>
+    <div class="scopenote" id="proj-scope" hidden>This projection is statewide. Picking a county in the View menu doesn't change it.</div>
+    <div class="gaps" id="proj-gaps"></div>
+    <div class="grid2">
+      <div class="panel">
+        <div class="ptitle"><h3>Share of the electorate by modeled party</h3><span class="sub" id="proj-sub"></span></div>
+        <div class="dots" id="proj-dots"></div>
+        <div class="legend"><span><i class="sq" style="background:var(--bg);border:2px solid var(--fg2);border-radius:50%"></i>Early vote so far</span><span><i class="sq" style="background:var(--fg2);border-radius:50%"></i>Projected final</span><span><i style="background:var(--fg2);opacity:.35;height:8px;width:22px;border-radius:4px"></i>Projection range</span></div>
+      </div>
+      <div class="panel">
+        <div class="ptitle"><h3>How this is built, and how it has done</h3></div>
+        <ul class="meth" id="proj-meth"></ul>
+      </div>
+    </div>
+    <p style="margin:12px 0 0"><button class="linkbtn" id="proj-hide" type="button">Hide projections</button></p>
+  </div>
+<script>
+(function(){
+const P = /*__PROJ__*/null;
+if(!P){document.getElementById('s-proj').hidden=true;return;}
+const NAMES={HardGOP:'Hard GOP',SoftGOP:'Soft GOP',Swing:'Swing',SoftDem:'Soft Dem',HardDem:'Hard Dem'};
+const COL={HardGOP:'var(--rep)',SoftGOP:'color-mix(in srgb, var(--rep) 55%, var(--bg))',Swing:'var(--oth)',SoftDem:'color-mix(in srgb, var(--dem) 55%, var(--bg))',HardDem:'var(--dem)'};
+const MAX=Math.max(40,Math.ceil(Math.max(...P.groups.flatMap(g=>[g.early,g.hi]))/10)*10), pos=v=>Math.max(0,Math.min(100,100*v/MAX));
+const fmtNet=v=>(v>=0?'GOP +':'Dem +')+Math.abs(v).toFixed(1);
+const fmt=n=>n.toLocaleString('en-US');
+const KEY='cs_proj_ack';
+const gate=document.getElementById('proj-gate'), body=document.getElementById('proj-body'), ack=document.getElementById('proj-ack'), show=document.getElementById('proj-show');
+function draw(){
+  const asof=new Date(P.asof+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  document.getElementById('proj-sub').textContent=`Data through ${asof}, ${P.dbe} days before Election Day`;
+  document.getElementById('proj-gaps').innerHTML=
+    `<div><span class="l">Early vote so far</span><span class="v num">${fmtNet(P.early_net)}</span><span class="d">GOP minus Dem share, ${fmt(P.early_votes)} votes matched to the voter file</span></div>`+
+    `<div><span class="l">Projected final electorate</span><span class="v num">${fmtNet(P.proj_net)}</span><span class="d">Range ${fmtNet(P.net_lo)} to ${fmtNet(P.net_hi)}</span></div>`+
+    `<div><span class="l">Expected shift by Election Day</span><span class="v num">${(P.proj_net-P.early_net>=0?'+':'')}${(P.proj_net-P.early_net).toFixed(1)}</span><span class="d">Points toward ${P.proj_net>=P.early_net?'GOP':'Dem'} as later voters arrive</span></div>`;
+  let h='';
+  P.groups.forEach(g=>{
+    h+=`<div class="drow"><span class="lab">${NAMES[g.k]}</span><div class="track" style="color:${COL[g.k]}" role="img" aria-label="${NAMES[g.k]}: ${g.early}% of early vote, projected ${g.proj}% of final (range ${g.lo} to ${g.hi})">`+
+       `<span class="range" style="left:${pos(g.lo)}%;width:${pos(g.hi)-pos(g.lo)}%;background:currentColor"></span>`+
+       `<span class="mk early" style="left:${pos(g.early)}%"></span><span class="mk proj" style="left:${pos(g.proj)}%"></span></div>`+
+       `<span class="vals num">${g.early.toFixed(1)}% → <b>${g.proj.toFixed(1)}%</b></span></div>`;
+  });
+  h+=`<div class="axisrow"><span></span><div class="ticks">${Array.from({length:MAX/10+1},(_,i)=>i*10).map(t=>`<span style="left:${pos(t)}%">${t}%</span>`).join('')}</div><span></span></div>`;
+  document.getElementById('proj-dots').innerHTML=h;
+  const bt=P.backtest.map(b=>{const tr=b.dir.startsWith('22')?['2022','2024']:['2024','2022'];return `trained on ${tr[0]} and tested on ${tr[1]}, the model missed the final gap by ${Math.abs(b.model).toFixed(1)} points; the raw early vote missed by ${Math.abs(b.naive).toFixed(1)}`;});
+  document.getElementById('proj-meth').innerHTML=[
+    `Everyone who has not voted yet gets a chance of still voting, from how similar __STATE__ voters behaved in 2022: same modeled party, same habit of voting early or on Election Day, same number of recent generals, same primary history. Each group's chance is scaled up or down by how fast that group is voting this year compared with 2022.`,
+    `Party groups are ColdSpark's five-way modeled party from the October 2026 voter file. They are not the three-way split shown elsewhere on this page.`,
+    `The range covers training on 2022 or on 2024 and putting more or less weight on this year's turnout pace.`,
+    `Backtest at the same point before Election Day: ${bt.join('; ')}.`,
+    `Total turnout is not projected. Turnout estimates missed by 5% to 16% in past-cycle tests across nine states.`,
+    `The 2026 early vote is more Democratic than in 2022 or 2024 at this point, so the projection leans on Republicans voting later than in past cycles. If they have stopped voting late, the final electorate will look more like the early vote.`
+  ].map(t=>`<li>${t}</li>`).join('');
+}
+function setScopeNote(){const s=document.getElementById('scope');document.getElementById('proj-scope').hidden=!s||s.value==='STATE';}
+function reveal(remember){gate.hidden=true;body.hidden=false;draw();setScopeNote();if(remember){try{sessionStorage.setItem(KEY,'1');}catch(e){}}}
+ack.addEventListener('change',()=>{show.disabled=!ack.checked;});
+show.addEventListener('click',()=>{if(ack.checked)reveal(true);});
+document.getElementById('proj-hide').addEventListener('click',()=>{body.hidden=true;gate.hidden=false;ack.checked=false;show.disabled=true;try{sessionStorage.removeItem(KEY);}catch(e){}});
+document.addEventListener('change',e=>{if(e.target&&e.target.id==='scope')setScopeNote();});
+window.addEventListener('hashchange',setScopeNote);
+let ok=false;try{ok=sessionStorage.getItem(KEY)==='1';}catch(e){}
+if(ok)reveal(false);
+})();
+</script>
+</section>
+
+
+  <section id="s-heat">
+    <header><div><div class="rule"></div><h2>Party × vote history <small>who has turned out, 2026 against 2022</small></h2></div>
+      <div class="toggles">
+        <div class="seg" id="heat-measure" role="group" aria-label="Measure"></div>
+        <div class="seg" id="heat-compare" role="group" aria-label="Comparison"></div>
+      </div>
+    </header>
+    <div class="panel"><div class="ptitle"><h3 id="heat-title"></h3><span class="sub" id="heat-sub"></span></div>
+      <div class="tablewrap heatwrap"><table class="heat" id="heat"></table></div>
+      <div class="legend" id="heat-legend"></div>
+      <div class="hint" id="heat-hint"></div></div>
   </section>
 
   <section id="s-map">
