@@ -46,13 +46,15 @@ jobs:
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
           FORCE=""; if [ "${{ inputs.force }}" = "true" ]; then FORCE="--force"; fi
           python build/ev_refresh.py --config build/ev_config.json --page index.html --fingerprint build/feed_fingerprint.txt $FORCE
+          echo "ran=true" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push
         id: push
+        if: steps.refresh.outputs.ran == 'true'
         run: |
           git config user.name "ColdSpark early-vote bot"
           git config user.email "mark@coldspark.com"
-          git add index.html build/feed_fingerprint.txt
+          git add index.html; if [ -f build/feed_fingerprint.txt ]; then git add build/feed_fingerprint.txt; fi
           if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
           if git diff --cached --quiet -- index.html; then MSG="Feed check"; else MSG="Data through ${{ steps.refresh.outputs.asof }}"; echo "page=true" >> "$GITHUB_OUTPUT"; fi
           git commit -q -m "$MSG"
