@@ -1040,6 +1040,7 @@ function methodology(){
 /* ---------- Election Day in 2024 and 2022 (static; added 2026-11-01; party + already-voted added 2026-11-01 v2) ---------- */
 (function(){
 var EDAY={"st":"Ohio","y":{"2024":{"_":[5818872,3229973],"ADAMS":[12461,5538],"ALLEN":[46639,27927],"ASHLAND":[26879,13333],"ASHTABULA":[43741,27426],"ATHENS":[25619,14015],"AUGLAIZE":[25748,14543],"BELMONT":[31287,15968],"BROWN":[21450,11839],"BUTLER":[184697,98535],"CARROLL":[13824,8212],"CHAMPAIGN":[20555,10101],"CLARK":[63296,33431],"CLERMONT":[114767,66518],"CLINTON":[20779,10756],"COLUMBIANA":[48419,30025],"COSHOCTON":[16471,7502],"CRAWFORD":[20395,11014],"CUYAHOGA":[584928,355845],"DARKE":[27153,14269],"DEFIANCE":[19288,8892],"DELAWARE":[134389,66513],"ERIE":[40044,20377],"FAIRFIELD":[84716,43002],"FAYETTE":[12600,6741],"FRANKLIN":[605922,352129],"FULTON":[22623,12545],"GALLIA":[13019,6810],"GEAUGA":[55335,28591],"GREENE":[91007,40888],"GUERNSEY":[17653,9841],"HAMILTON":[414767,245530],"HANCOCK":[38241,27494],"HARDIN":[12928,7091],"HARRISON":[7165,4358],"HENRY":[15012,9322],"HIGHLAND":[19997,10588],"HOCKING":[13506,5835],"HOLMES":[12544,6303],"HURON":[27346,14884],"JACKSON":[14329,5664],"JEFFERSON":[31557,17295],"KNOX":[32289,15093],"LAKE":[129424,69323],"LAWRENCE":[27022,16390],"LICKING":[95598,47002],"LOGAN":[23614,7564],"LORAIN":[160470,86397],"LUCAS":[193229,110163],"MADISON":[20740,9976],"MAHONING":[113823,63875],"MARION":[27447,12242],"MEDINA":[107673,51289],"MEIGS":[10478,5953],"MERCER":[23881,10985],"MIAMI":[59495,28248],"MONROE":[6877,3604],"MONTGOMERY":[257159,151543],"MORGAN":[6849,3301],"MORROW":[18925,10523],"MUSKINGUM":[39674,19948],"NOBLE":[6218,3049],"OTTAWA":[24118,13410],"PAULDING":[9352,4605],"PERRY":[17091,9288],"PICKAWAY":[29364,16283],"PIKE":[12231,5427],"PORTAGE":[83479,49508],"PREBLE":[21797,12720],"PUTNAM":[19913,9866],"RICHLAND":[58791,28337],"ROSS":[33050,16100],"SANDUSKY":[29863,22232],"SCIOTO":[31393,17662],"SENECA":[25489,15295],"SHELBY":[25357,13159],"STARK":[185320,109796],"SUMMIT":[275896,166692],"TRUMBULL":[97676,57050],"TUSCARAWAS":[43433,25866],"UNION":[37552,15149],"VAN WERT":[14841,5831],"VINTON":[5792,2894],"WARREN":[140543,63814],"WASHINGTON":[31234,13217],"WAYNE":[53604,28861],"WILLIAMS":[18421,10350],"WOOD":[67788,37110],"WYANDOT":[11503,5493]},"2022":{"_":[4182767,2825986],"ADAMS":[8994,5871],"ALLEN":[32931,23851],"ASHLAND":[18729,11804],"ASHTABULA":[31238,22566],"ATHENS":[18814,12024],"AUGLAIZE":[18815,13993],"BELMONT":[22813,13280],"BROWN":[14283,9739],"BUTLER":[129394,94680],"CARROLL":[10263,7253],"CHAMPAIGN":[14622,9639],"CLARK":[44848,30199],"CLERMONT":[80695,55673],"CLINTON":[14238,9349],"COLUMBIANA":[35856,27472],"COSHOCTON":[11493,6727],"CRAWFORD":[15070,9557],"CUYAHOGA":[414960,276697],"DARKE":[20032,14091],"DEFIANCE":[13599,7982],"DELAWARE":[99184,64474],"ERIE":[29141,18444],"FAIRFIELD":[59727,38457],"FAYETTE":[8438,5783],"FRANKLIN":[428153,287266],"FULTON":[16488,11658],"GALLIA":[9227,5857],"GEAUGA":[43006,27627],"GREENE":[66951,43424],"GUERNSEY":[12362,8170],"HAMILTON":[306494,213117],"HANCOCK":[27525,20135],"HARDIN":[9143,6066],"HARRISON":[5271,3719],"HENRY":[10544,10451],"HIGHLAND":[13297,8742],"HOCKING":[9635,5348],"HOLMES":[8767,6012],"HURON":[18722,12354],"JACKSON":[8980,5045],"JEFFERSON":[23152,15400],"KNOX":[23233,15066],"LAKE":[95313,61418],"LAWRENCE":[17689,13236],"LICKING":[66909,42609],"LOGAN":[16625,8731],"LORAIN":[113375,71432],"LUCAS":[134161,90750],"MADISON":[14239,9010],"MAHONING":[86498,57095],"MARION":[19387,11710],"MEDINA":[78956,48432],"MEIGS":[7574,5278],"MERCER":[18048,11693],"MIAMI":[42528,27723],"MONROE":[4976,3006],"MONTGOMERY":[188429,135962],"MORGAN":[4903,2817],"MORROW":[13431,10356],"MUSKINGUM":[27738,16977],"NOBLE":[4721,2776],"OTTAWA":[18662,16658],"PAULDING":[6621,4048],"PERRY":[12136,7993],"PICKAWAY":[19727,13268],"PIKE":[7903,4363],"PORTAGE":[60702,42587],"PREBLE":[15880,12079],"PUTNAM":[15196,10236],"RICHLAND":[42251,27768],"ROSS":[22869,13973],"SANDUSKY":[21694,18513],"SCIOTO":[21277,14784],"SENECA":[18412,13444],"SHELBY":[18559,12850],"STARK":[135475,95055],"SUMMIT":[202232,139746],"TRUMBULL":[73626,52478],"TUSCARAWAS":[30821,20794],"UNION":[25489,15761],"VAN WERT":[10233,5676],"VINTON":[4095,2723],"WARREN":[102156,62462],"WASHINGTON":[22985,13414],"WAYNE":[38987,26992],"WILLIAMS":[13096,9410],"WOOD":[48787,35360],"WYANDOT":[8269,7478]}},"p":{"2024":{"_":[731365,319011,2179597,56084,45947,126740],"ADAMS":[2423,187,2928,200,36,147],"ALLEN":[8409,1532,17986,546,214,786],"ASHLAND":[4835,538,7960,320,73,399],"ASHTABULA":[7591,3034,16801,403,389,699],"ATHENS":[2780,1905,9330,157,325,673],"AUGLAIZE":[4641,373,9529,380,63,426],"BELMONT":[4736,1043,10189,352,143,380],"BROWN":[3978,472,7389,243,60,287],"BUTLER":[21847,4921,71767,1791,674,4171],"CARROLL":[2733,533,4946,193,74,216],"CHAMPAIGN":[3755,507,5839,288,66,288],"CLARK":[9901,2272,21258,640,355,1021],"CLERMONT":[17184,2725,46609,1385,427,2436],"CLINTON":[4121,287,6348,309,48,311],"COLUMBIANA":[9564,1984,18477,459,221,546],"COSHOCTON":[3020,374,4108,229,62,175],"CRAWFORD":[3152,491,7371,216,61,333],"CUYAHOGA":[48662,63220,243963,3150,8112,12859],"DARKE":[5593,437,8239,402,86,394],"DEFIANCE":[2396,375,6121,215,69,366],"DELAWARE":[17600,5897,43016,1493,866,2964],"ERIE":[4419,1835,14123,342,277,994],"FAIRFIELD":[9856,2484,30662,941,398,2107],"FAYETTE":[2084,252,4405,159,46,227],"FRANKLIN":[47362,46641,258126,3212,5735,14830],"FULTON":[3958,809,7778,276,109,329],"GALLIA":[2817,319,3674,165,41,135],"GEAUGA":[9261,1852,17478,938,318,1263],"GREENE":[10556,2742,27590,998,434,1784],"GUERNSEY":[3185,555,6101,224,74,224],"HAMILTON":[38933,22687,183910,2929,3529,11318],"HANCOCK":[10317,1513,15664,2209,580,2092],"HARDIN":[2492,285,4314,166,49,163],"HARRISON":[1624,402,2332,100,55,74],"HENRY":[3394,539,5389,484,173,643],"HIGHLAND":[3750,293,6545,221,44,290],"HOCKING":[1785,391,3659,125,50,201],"HOLMES":[2106,120,4077,110,18,120],"HURON":[3968,767,10149,243,106,441],"JACKSON":[1294,129,4241,106,27,273],"JEFFERSON":[4309,1369,11617,342,219,515],"KNOX":[5323,563,9207,391,95,503],"LAKE":[16973,5986,46364,1307,803,2805],"LAWRENCE":[5215,921,10254,313,107,373],"LICKING":[11827,2908,32267,858,426,1886],"LOGAN":[2024,157,5383,261,26,417],"LORAIN":[18350,10579,57468,1427,1784,3839],"LUCAS":[15663,12541,81959,1273,2196,5778],"MADISON":[3007,387,6582,308,84,415],"MAHONING":[15376,8340,40159,916,995,2134],"MARION":[3192,589,8461,280,105,496],"MEDINA":[14199,3554,33536,1393,658,2442],"MEIGS":[2089,305,3559,156,48,184],"MERCER":[4484,317,6184,320,65,342],"MIAMI":[8662,1117,18469,760,187,1213],"MONROE":[957,301,2346,72,34,116],"MONTGOMERY":[33216,16295,102032,1961,2313,5222],"MORGAN":[1348,204,1749,97,29,63],"MORROW":[4138,486,5899,247,63,241],"MUSKINGUM":[5112,793,14043,367,110,771],"NOBLE":[1068,191,1790,84,19,88],"OTTAWA":[3432,1219,8759,461,279,700],"PAULDING":[1351,183,3071,104,29,151],"PERRY":[3509,592,5187,260,99,285],"PICKAWAY":[6447,883,8953,388,99,357],"PIKE":[1283,256,3888,94,42,197],"PORTAGE":[11990,4927,32591,883,729,1953],"PREBLE":[4252,495,7973,681,133,534],"PUTNAM":[3495,325,6046,286,35,267],"RICHLAND":[8462,1646,18229,616,290,892],"ROSS":[4124,956,11020,297,141,660],"SANDUSKY":[6592,1879,13761,656,476,1217],"SCIOTO":[4644,997,12021,287,129,536],"SENECA":[5530,994,8771,361,141,381],"SHELBY":[4707,337,8115,350,55,399],"STARK":[29793,11268,68735,2137,1652,4065],"SUMMIT":[32724,24693,109275,2369,3591,7162],"TRUMBULL":[14075,9875,33100,944,1412,1782],"TUSCARAWAS":[6785,1866,17215,565,320,948],"UNION":[4094,606,10449,372,106,739],"VAN WERT":[1628,161,4042,133,29,174],"VINTON":[915,183,1796,97,26,109],"WARREN":[15348,2901,45565,1382,453,2826],"WASHINGTON":[4520,671,8026,314,110,457],"WAYNE":[9303,1509,18049,713,242,992],"WILLIAMS":[3547,471,6332,216,53,231],"WOOD":[8482,3296,25332,544,399,1312],"WYANDOT":[1719,197,3577,122,24,186]},"2022":{"_":[885608,465234,1475144,152150,119711,185425],"ADAMS":[2625,323,2923,718,128,480],"ALLEN":[11200,2312,10339,1733,582,1030],"ASHLAND":[5617,821,5366,1088,254,717],"ASHTABULA":[8001,3710,10855,1045,816,1050],"ATHENS":[2714,2911,6399,360,906,830],"AUGLAIZE":[6630,720,6643,1319,219,800],"BELMONT":[4565,1507,7208,769,398,743],"BROWN":[3814,643,5282,607,166,560],"BUTLER":[30144,9346,55190,6662,3015,8978],"CARROLL":[3180,734,3339,474,183,325],"CHAMPAIGN":[4597,732,4310,939,226,577],"CLARK":[11994,3706,14499,2007,1172,1827],"CLERMONT":[20815,4651,30207,3438,1158,3379],"CLINTON":[4221,540,4588,766,173,550],"COLUMBIANA":[10900,2800,13772,1483,564,1160],"COSHOCTON":[3792,590,2345,755,226,339],"CRAWFORD":[4236,773,4548,653,165,424],"CUYAHOGA":[49586,86003,141108,5402,17903,14042],"DARKE":[7459,713,5919,1339,222,750],"DEFIANCE":[3571,746,3665,779,267,595],"DELAWARE":[22372,8802,33300,4074,2401,4703],"ERIE":[5495,3033,9916,1023,884,1596],"FAIRFIELD":[14550,4194,19713,2806,1199,2728],"FAYETTE":[2622,372,2789,504,109,378],"FRANKLIN":[56982,65774,164510,7229,14049,18026],"FULTON":[4967,1102,5589,833,307,655],"GALLIA":[3158,517,2182,466,114,202],"GEAUGA":[12246,2808,12573,2251,793,1626],"GREENE":[18266,5357,19801,4147,1758,3120],"GUERNSEY":[3411,818,3941,530,209,375],"HAMILTON":[48661,41454,123002,7050,11034,14126],"HANCOCK":[9679,1939,8517,2346,752,1475],"HARDIN":[2808,434,2824,413,128,286],"HARRISON":[1748,485,1486,289,114,128],"HENRY":[4061,1253,5137,1301,676,1225],"HIGHLAND":[3374,445,4923,542,118,549],"HOCKING":[2103,549,2696,387,167,388],"HOLMES":[2676,277,3059,480,106,339],"HURON":[4740,1300,6314,792,362,720],"JACKSON":[2109,282,2654,626,125,510],"JEFFERSON":[5003,2448,7949,1022,654,876],"KNOX":[6775,1080,7211,1425,408,1007],"LAKE":[21789,9788,29841,3530,2380,3682],"LAWRENCE":[6345,1371,5520,1130,381,622],"LICKING":[16685,4712,21212,2992,1353,2767],"LOGAN":[3924,419,4388,1312,191,1038],"LORAIN":[20274,12958,38200,3501,3634,5270],"LUCAS":[18396,17180,55174,3334,5173,8452],"MADISON":[3830,599,4581,880,198,765],"MAHONING":[17021,12424,27650,2247,2846,2916],"MARION":[4813,1292,5605,1063,460,898],"MEDINA":[16754,5197,26481,3674,1730,4376],"MEIGS":[2704,400,2174,451,104,226],"MERCER":[6356,586,4751,1384,224,671],"MIAMI":[11245,1922,14556,2538,657,2337],"MONROE":[1060,485,1461,148,96,171],"MONTGOMERY":[39342,23167,73453,4665,5897,8099],"MORGAN":[1703,259,855,290,79,91],"MORROW":[5444,808,4104,919,219,465],"MUSKINGUM":[5966,1262,9749,1095,400,1271],"NOBLE":[1169,452,1155,195,65,100],"OTTAWA":[5233,2992,8433,1357,1276,1917],"PAULDING":[1876,310,1862,352,95,256],"PERRY":[3629,802,3562,551,204,455],"PICKAWAY":[5804,1164,6300,864,298,637],"PIKE":[1268,388,2707,253,113,373],"PORTAGE":[12466,7129,22992,1796,1803,2654],"PREBLE":[6010,814,5255,1598,300,782],"PUTNAM":[4718,567,4951,1098,150,566],"RICHLAND":[12080,2494,13194,2482,823,2039],"ROSS":[4782,1544,7647,914,475,1188],"SANDUSKY":[8097,2958,7458,1469,1092,1073],"SCIOTO":[5682,1543,7559,876,394,831],"SENECA":[6959,1618,4867,1061,474,521],"SHELBY":[6309,637,5904,1233,211,750],"STARK":[33529,14349,47177,5237,3749,5686],"SUMMIT":[36198,27992,75556,4808,6942,8784],"TRUMBULL":[15848,13498,23132,2534,3537,3016],"TUSCARAWAS":[7442,2664,10688,1132,739,1095],"UNION":[5741,1191,8829,1366,418,1707],"VAN WERT":[2739,342,2595,646,123,373],"VINTON":[1172,271,1280,294,86,177],"WARREN":[21394,5534,35534,4831,1793,5313],"WASHINGTON":[4989,1210,7215,1167,394,1109],"WAYNE":[11063,2355,13574,2116,766,1859],"WILLIAMS":[4431,729,4250,797,176,453],"WOOD":[9933,5136,20291,1862,1623,2763],"WYANDOT":[3929,718,2831,1236,360,637]}},"asof":"2026-10-30"};
+window.EDAY_DATA=EDAY;
 var css0='#s-eday .edgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px}'
  +'#s-eday .edc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 14px;min-width:0;display:flex;flex-direction:column;gap:6px}'
  +'#s-eday .edl{font-family:var(--cond);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:var(--muted)}'
@@ -1109,6 +1110,129 @@ function draw(){
 if(typeof render==='function'){var _r=render;render=function(){var o=_r.apply(this,arguments);try{draw();}catch(e){}return o;};}
 draw();
 })();
+
+/* ---------- Win calculator (added 2026-11-01) ---------- */
+(function(){
+var E=window.EDAY_DATA; if(!E||typeof cum!=='function')return;
+var PN=(typeof PNAME!=='undefined'&&PNAME)?PNAME:{R:'Republican',D:'Democratic',O:'Other'};
+var KS=['R','D','O'], SH={R:'Republicans',D:'Democrats',O:PN.O};
+var KEY='cs_wincalc';
+var S={sup:{R:90,D:5,O:40}, custom:{R:40,D:35,O:25}, sel:'e26_22'};
+try{var sv=JSON.parse(localStorage.getItem(KEY)||'null'); if(sv&&sv.sup){S.sup=sv.sup;S.custom=sv.custom||S.custom;S.sel=sv.sel||S.sel;}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+var css='#wc-fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:8px;padding:11px 16px;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:800;font-size:14px;letter-spacing:.02em;box-shadow:0 4px 16px rgba(0,0,0,.25)}'
++'#wc-fab svg{width:18px;height:18px}'
++'#wc{border:0;padding:0;margin:auto;width:min(760px,calc(100% - 24px));max-height:calc(100% - 24px);border-radius:8px;background:var(--bg);color:var(--fg);box-shadow:0 10px 40px rgba(0,0,0,.35)}'
++'#wc::backdrop{background:rgba(0,20,32,.55)}'
++'#wc .wch{position:sticky;top:0;z-index:2;background:var(--navy);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}'
++'#wc .wch h2{font-family:var(--cond);font-weight:700;font-size:24px}#wc .wch p{margin:2px 0 0;color:var(--head-fg2);font-size:13px}'
++'#wc .wcx{color:#fff;font-size:26px;line-height:1;padding:2px 6px}'
++'#wc .wcb{padding:16px 18px 20px;display:grid;gap:18px}'
++'#wc h3{font-family:var(--cond);font-weight:700;font-size:17px;letter-spacing:.02em;margin-bottom:8px}'
++'#wc .sl{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr) 74px;gap:12px;align-items:center;margin:6px 0}'
++'#wc .sl label{font-weight:600;font-size:14px;color:var(--fg2)}#wc .sl label i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}'
++'#wc input[type=range]{width:100%;accent-color:var(--navy)}'
++'#wc input[type=number]{width:100%;font:inherit;font-weight:700;padding:5px 6px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--fg);text-align:right}'
++'#wc .presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}#wc .presets button{font-size:12px;font-weight:600;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--fg2);background:var(--surface)}'
++'#wc table{width:100%;min-width:0;border-collapse:collapse;font-size:13px}#wc th,#wc td{padding:7px 6px;border-bottom:1px solid var(--line2);text-align:right;white-space:normal}'
++'#wc thead th{position:static;background:none;cursor:default;font-family:var(--cond);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:var(--muted)}'
++'#wc th:first-child,#wc td:first-child{text-align:left}#wc tbody tr{cursor:pointer}#wc tbody tr:hover{background:var(--surface)}'
++'#wc tbody tr.on{background:var(--surface2);box-shadow:inset 3px 0 0 var(--gold)}'
++'#wc td small{display:block;color:var(--muted);font-size:11px}'
++'#wc .mixb{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:1px;margin-top:4px;min-width:70px}#wc .mixb span{display:block;height:100%}'
++'#wc .res{font-weight:800;white-space:nowrap}#wc .res.w{color:var(--pos)}#wc .res.l{color:var(--neg)}'
++'#wc .big{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:6px;padding:14px 16px;display:grid;gap:8px}'
++'#wc .big.w{border-left-color:var(--pos)}#wc .big.l{border-left-color:var(--neg)}'
++'#wc .big .v{font-family:var(--cond);font-weight:700;font-size:32px;line-height:1}#wc .big .v small{font-size:15px;font-weight:600;color:var(--fg2);margin-left:6px}'
++'#wc .big ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--fg2);display:grid;gap:4px}#wc .big b{color:var(--fg)}'
++'#wc .cus{display:none;gap:8px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:10px}#wc .cus.on{display:grid}#wc .cus label{font-size:12px;color:var(--muted);display:grid;gap:3px}'
++'#wc .warn{font-size:12px;color:var(--neg)}#wc .fine{font-size:12px;color:var(--muted);margin:0}'
++'@media (max-width:560px){#wc{width:100%;max-height:100%;height:100%;border-radius:0}#wc .sl{grid-template-columns:minmax(0,1fr) 70px}#wc .sl input[type=range]{grid-column:1/-1;grid-row:2}#wc .hide-s{display:none}}';
+var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+var fab=document.createElement('button');fab.id='wc-fab';fab.type='button';
+fab.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg>Win calculator';
+document.body.appendChild(fab);
+var dlg=document.createElement('dialog');dlg.id='wc';dlg.setAttribute('aria-labelledby','wc-t');
+dlg.innerHTML='<div class="wch"><div><h2 id="wc-t">Win calculator</h2><p id="wc-scope"></p></div><button type="button" class="wcx" id="wc-x" aria-label="Close">×</button></div>'
++'<div class="wcb">'
++'<div><h3>1 · Share of each party voting for the candidate</h3><div id="wc-sl"></div>'
++'<div class="presets" id="wc-pre"></div></div>'
++'<div><h3>2 · Who turns out</h3><p class="fine" style="margin-bottom:6px">Click a row to see it in detail. Every row uses the support numbers above.</p>'
++'<table><thead><tr><th>Electorate assumption</th><th class="hide-s">Mix (R / D / '+PN.O.split(' ')[0]+')</th><th>Candidate</th><th>Result</th></tr></thead><tbody id="wc-rows"></tbody></table>'
++'<div class="cus" id="wc-cus"></div><div class="warn" id="wc-cw"></div></div>'
++'<div class="big" id="wc-big"></div>'
++'<p class="fine">Two-way race: everyone not voting for the candidate is counted for the opponent, and minor candidates and blank ballots are ignored. Electorates are built from this page’s data: early votes by party from the early-vote feed, plus Election Day voters by party from each year’s voter file (the Election Day section above). Party is grouped as on the rest of the page ('+((typeof ST!=='undefined'&&ST&&ST.party_label)||'party')+'). “2026 so far + Election Day like 2022” adds 2022’s Election Day voters, by party, to the 2026 early vote counted so far, so it assumes Election Day turnout repeats 2022’s; the 2026 early vote is still growing.</p>'
++'</div>';
+document.body.appendChild(dlg);
+var n=function(x){return Math.round(x).toLocaleString('en-US');};
+var tc=function(s){return s.toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});};
+function scope(){return (typeof state!=='undefined'&&state&&state.scope)?state.scope:'STATE';}
+function edBy(y,key){var p=((E.p||{})[y]||{})[key]; return p?{R:p[0],D:p[1],O:p[2]}:null;}
+function evBy(y,sc,dmin){var o={};KS.forEach(function(k){o[k]=cum(sc,y,'ev',k,dmin);});return o;}
+function add(a,b){var o={};KS.forEach(function(k){o[k]=(a?a[k]:0)+(b?b[k]:0);});return o;}
+function scenarios(){
+  var sc=scope(), key=sc==='STATE'?'_':sc;
+  var e26=evBy('2026',sc,ASOF), ed22=edBy('2022',key), ed24=edBy('2024',key);
+  var asofTxt=new Date(E.asof+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  var L=[
+    {id:'e26_22',name:'2026 early vote so far + Election Day like 2022',sub:'early vote through '+(typeof dateOf==='function'?dateOf('2026',ASOF).toLocaleDateString('en-US',{month:'short',day:'numeric'}):asofTxt),c:add(e26,ed22)},
+    {id:'e26_24',name:'2026 early vote so far + Election Day like 2024',sub:'presidential-year Election Day',c:add(e26,ed24)},
+    {id:'f22',name:'2022 electorate',sub:'all early votes + Election Day',c:add(evBy('2022',sc,null),ed22)},
+    {id:'f24',name:'2024 electorate',sub:'all early votes + Election Day',c:add(evBy('2024',sc,null),ed24)},
+    {id:'e26',name:'2026 early vote so far only',sub:'as if no one else votes',c:e26},
+    {id:'cus',name:'Custom mix',sub:'set the shares below',c:null}
+  ];
+  return L;
+}
+function share(c){var t=c.R+c.D+c.O; if(!t)return null; return {t:t, r:c.R/t, d:c.D/t, o:c.O/t, cand:(c.R*S.sup.R+c.D*S.sup.D+c.O*S.sup.O)/100/t};}
+function custC(){var t=S.custom.R+S.custom.D+S.custom.O||1; return {R:S.custom.R/t,D:S.custom.D/t,O:S.custom.O/t};}
+function draw(){
+  var sc=scope();
+  document.getElementById('wc-scope').textContent=(sc==='STATE'?(ST&&ST.name)+' statewide':tc(sc)+' County, '+(ST&&ST.name))+' · change the area with the View menu on the page';
+  var cs=getComputedStyle(document.documentElement), C={R:cs.getPropertyValue('--rep').trim(),D:cs.getPropertyValue('--dem').trim(),O:cs.getPropertyValue('--oth').trim()};
+  var L=scenarios(), rows='', selRow=null;
+  L.forEach(function(s){
+    var c=s.id==='cus'?custC():s.c, m=c?share(c):null;
+    if(s.id===S.sel)selRow={s:s,m:m};
+    var res=m?(m.cand>0.5?'<span class="res w">Wins +'+((2*m.cand-1)*100).toFixed(1)+'</span>':(m.cand<0.5?'<span class="res l">Loses −'+((1-2*m.cand)*100).toFixed(1)+'</span>':'<span class="res">Tie</span>')):'–';
+    rows+='<tr data-id="'+s.id+'" class="'+(s.id===S.sel?'on':'')+'" tabindex="0"><td><b>'+s.name+'</b><small>'+s.sub+(m&&s.id!=='cus'?' · '+n(m.t)+' votes':'')+'</small></td>'
+      +'<td class="hide-s">'+(m?(m.r*100).toFixed(0)+' / '+(m.d*100).toFixed(0)+' / '+(m.o*100).toFixed(0)+'<div class="mixb">'+KS.map(function(k){return '<span style="flex:'+m[k.toLowerCase()]+';background:'+C[k]+'"></span>';}).join('')+'</div>':'–')+'</td>'
+      +'<td>'+(m?(m.cand*100).toFixed(1)+'%':'–')+'</td><td>'+res+'</td></tr>';
+  });
+  var tb=document.getElementById('wc-rows'); tb.innerHTML=rows;
+  tb.querySelectorAll('tr').forEach(function(tr){var go=function(){S.sel=tr.dataset.id;save();draw();};tr.addEventListener('click',go);tr.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
+  document.getElementById('wc-cus').classList.toggle('on',S.sel==='cus');
+  var ct=S.custom.R+S.custom.D+S.custom.O; document.getElementById('wc-cw').textContent=(S.sel==='cus'&&Math.abs(ct-100)>0.5)?'Custom shares add to '+ct+'%; they are scaled to 100% for the math.':'';
+  var big=document.getElementById('wc-big');
+  if(!selRow||!selRow.m){big.className='big';big.innerHTML='<div>No data for this assumption in this area.</div>';return;}
+  var m=selRow.m, win=m.cand>0.5, mg=(2*m.cand-1)*100, hasT=selRow.s.id!=='cus';
+  big.className='big '+(win?'w':(m.cand<0.5?'l':''));
+  function need(k){ // support needed in party k (others fixed) to reach 50%
+    var w=m[k.toLowerCase()]; if(!w)return null; var rest=0; KS.forEach(function(j){if(j!==k)rest+=m[j.toLowerCase()]*S.sup[j]/100;}); return (0.5-rest)/w*100; }
+  var needTxt=function(k){var v=need(k); if(v==null)return '–'; if(v<=0)return 'wins even with 0% of '+SH[k]; if(v>100)return 'can’t win even with 100% of '+SH[k]; return '<b>'+v.toFixed(1)+'%</b> of '+SH[k]+' (now '+S.sup[k]+'%)';};
+  big.innerHTML='<div class="v">'+(win?'Wins':(m.cand<0.5?'Loses':'Tie'))+' '+(mg>=0?'+':'−')+Math.abs(mg).toFixed(1)+'<small>points · '+(m.cand*100).toFixed(1)+'% to '+((1-m.cand)*100).toFixed(1)+'%</small></div>'
+   +'<div style="font-size:13px;color:var(--fg2)">'+selRow.s.name+(hasT?' · about <b>'+n(Math.abs(mg)/100*m.t)+'</b> votes '+(win?'ahead':'behind')+' of '+n(m.t)+' cast':'')+'</div>'
+   +'<ul><li>Electorate: '+KS.map(function(k){return SH[k]+' <b>'+(m[k.toLowerCase()]*100).toFixed(1)+'%</b>';}).join(' · ')+'</li>'
+   +'<li>To break even, holding the other two groups where they are, the candidate needs '+needTxt('O')+'; or '+needTxt('R')+'; or '+needTxt('D')+'.</li></ul>';
+}
+function sliders(){
+  var cs=getComputedStyle(document.documentElement), C={R:cs.getPropertyValue('--rep').trim(),D:cs.getPropertyValue('--dem').trim(),O:cs.getPropertyValue('--oth').trim()};
+  document.getElementById('wc-sl').innerHTML=KS.map(function(k){return '<div class="sl"><label for="wc-r'+k+'"><i style="background:'+C[k]+'"></i>'+SH[k]+'</label><input type="range" id="wc-r'+k+'" min="0" max="100" step="1" value="'+S.sup[k]+'" aria-label="'+SH[k]+' voting for the candidate, percent"><input type="number" id="wc-n'+k+'" min="0" max="100" step="1" value="'+S.sup[k]+'" aria-label="'+SH[k]+' percent"></div>';}).join('');
+  KS.forEach(function(k){var r=document.getElementById('wc-r'+k), nb=document.getElementById('wc-n'+k);
+    r.addEventListener('input',function(){S.sup[k]=+r.value;nb.value=r.value;save();draw();});
+    nb.addEventListener('input',function(){var v=Math.max(0,Math.min(100,+nb.value||0));S.sup[k]=v;r.value=v;save();draw();});});
+  var pre=[['Typical GOP candidate',{R:92,D:6,O:45}],['Strong GOP year',{R:94,D:8,O:55}],['Typical Dem candidate',{R:7,D:92,O:52}]];
+  var pb=document.getElementById('wc-pre'); pb.innerHTML='<span class="fine" style="align-self:center">Presets:</span>'+pre.map(function(p,i){return '<button type="button" data-i="'+i+'">'+p[0]+' ('+p[1].R+' / '+p[1].D+' / '+p[1].O+')</button>';}).join('');
+  pb.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){S.sup=Object.assign({},pre[+b.dataset.i][1]);save();sliders();draw();});});
+  document.getElementById('wc-cus').innerHTML=KS.map(function(k){return '<label>'+SH[k]+' share of voters (%)<input type="number" min="0" max="100" step="0.5" id="wc-c'+k+'" value="'+S.custom[k]+'"></label>';}).join('');
+  KS.forEach(function(k){var i=document.getElementById('wc-c'+k);i.addEventListener('input',function(){S.custom[k]=Math.max(0,+i.value||0);save();draw();});});
+}
+fab.addEventListener('click',function(){sliders();draw();if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');});
+document.getElementById('wc-x').addEventListener('click',function(){dlg.close();});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+if(typeof render==='function'){var _r=render;render=function(){var o=_r.apply(this,arguments);try{if(dlg.open)draw();}catch(e){}return o;};}
+})();
+
 </script>
 
 </body>
